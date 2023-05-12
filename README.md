@@ -4,6 +4,8 @@ Took up the piano recently, just a simple way for me to practice piano notes in 
 
 [Play here](https://piano-notes.jezl.xyz)
 
+![screen grab](./src/Assets/Images/screengrab.gif)
+
 Using:
 
 - React App
