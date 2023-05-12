@@ -2,6 +2,8 @@
 
 Took up the piano recently, just a simple way for me to practice piano notes in the browser.
 
+[Play here](https://piano.jezl.xyz)
+
 Using:
 
 - React App
