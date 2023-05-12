@@ -1,0 +1,15 @@
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+            @content;
+    }
+}
+
+@keyframes appearOnScreen {
+    0% {
+        opacity: 50%;
+    }
+
+    100% {
+        opacity: 100%
+    }
+}

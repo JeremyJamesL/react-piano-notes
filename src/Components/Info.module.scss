@@ -1,0 +1,40 @@
+.info {
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+}
+
+.icon {
+    font-weight: bolder;
+    font-size: 3rem;
+    color: #9b9999;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.text {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    padding: 1.5rem;
+    position: relative;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+
+    &::after {
+        content: '';
+        border-top: 1rem solid transparent;
+        border-bottom: 1rem solid transparent;
+        border-left: 1rem solid white;
+        display: block;
+        position: absolute;
+        right: -1rem;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+}
+
+.show.text {
+    opacity: 1;
+}

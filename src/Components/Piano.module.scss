@@ -1,0 +1,136 @@
+@use "../css/mixins.scss" as mixin;
+
+// Vars
+$naturalWidth: 2.4rem;
+$screenmdWidth: 2rem;
+$screensmWidth: 1.6rem;
+$screenxsWidth: 1.4rem;
+
+$borderRadius: 0.3rem;
+$borderRadiusSm: 0.1rem;
+
+
+$piano-height: 13rem;
+$piano-height-md: 10rem;
+$piano-height-sm: 8rem;
+
+
+$flat-sharps-padding: .5rem;
+
+.piano {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden!important;
+    height: $piano-height;
+    box-shadow:  0px 5px 11px rgba(0, 0, 0, 0.25);
+
+    @include mixin.md-screen {
+       height: $piano-height-md;
+    }
+
+     @include mixin.sm-screen {
+        height: $piano-height;
+    }
+
+}
+
+.naturals {
+    display: grid;
+    grid-template-columns: repeat(52, $naturalWidth);
+    height: 100%;
+
+    @include mixin.md-screen {
+        grid-template-columns: repeat(52, $screenmdWidth);
+    }
+
+    // @include mixin.sm-screen {
+    //     grid-template-columns: repeat(52, $screensmWidth);
+    // }
+    
+    @include mixin.sm-screen {
+        grid-template-columns: repeat(29, $naturalWidth);
+    }
+
+}
+
+.natural-keys {
+    background: linear-gradient(180deg, #EFEFEF 0%, #FFFFFF 54.82%, #FFFFFF 100%);;
+    border: 1px solid black;
+    height: 100%;
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    
+    @include mixin.sm-screen {
+        border-bottom-left-radius: $borderRadiusSm;
+        border-bottom-right-radius: $borderRadiusSm;
+    }
+
+    &:active {
+        border: 1px solid rgba(blue, 0.5);
+        background-color: rgba(blue, 0.1);
+    }
+
+}
+
+.flats-sharps {
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(50, calc($naturalWidth/2));
+    grid-column-gap: calc($naturalWidth/2);
+    // margin-left: calc($naturalWidth - $flat-sharps-padding);
+    margin-left: calc($naturalWidth);
+    height: 50%;
+    // padding: 0 $flat-sharps-padding;
+
+
+
+    @include mixin.md-screen {
+        grid-template-columns: repeat(50, calc($screenmdWidth/2));
+        grid-column-gap: calc($screenmdWidth/2);
+        margin-left: $screenmdWidth;
+    }
+
+  
+    // @include mixin.sm-screen {
+    //     grid-template-columns: repeat(50, calc($screensmWidth/2));
+    //     grid-column-gap: calc($screensmWidth/2);
+    //     margin-left: $screensmWidth;
+    // }
+
+    @include mixin.sm-screen {
+        grid-template-columns: repeat(28, calc($naturalWidth/2));
+        grid-column-gap: calc($naturalWidth/2);
+        margin-left: $naturalWidth;
+    }
+
+}
+
+.flats-sharps-keys {
+    background-color: black;
+    transform: translateX(-50%);
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    padding: 8px;
+    
+
+    @include mixin.md-screen {
+        padding: 2px;
+     }
+
+     @include mixin.sm-screen {
+        padding: 8px;
+     }
+
+    &:active {
+        border: 1px solid white;
+    }
+}
+
+.hide {
+    background-color: transparent;
+}
+
+.grey-out {
+   background: #C4C4C4;
+}

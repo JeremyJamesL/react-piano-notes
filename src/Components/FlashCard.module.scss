@@ -1,0 +1,36 @@
+@keyframes appearOnScreen {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.flash-card {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    width: auto;
+    height: auto;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border: 5px solid transparent;
+
+    &--red {
+        border: 5px solid red;
+        box-shadow: 0px 0px 21px 12px rgba(248, 35, 21, 0.25)
+    }
+
+    &--green {
+        border: 5px solid green;
+        box-shadow: 0px 0px 21px 12px rgba(8, 197, 82, 0.25)
+    }
+
+
+}
+
+
